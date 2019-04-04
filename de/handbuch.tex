@@ -1,0 +1,30 @@
+% documentclass options:
+\documentclass[11pt,
+  a4paper,
+  parskip=half,
+  BCOR=10mm,
+  ngerman,
+  ]{scrbook}
+\usepackage[ngerman]{babel}
+\usepackage{titling}
+\title{Benutzer*innenhandbuch StuRa Abstimmungssoftware}
+\author{Fabian Wenzelmann}
+\date{April 2019}
+\subject{Foo}
+\subtitle{Bar}
+
+% include all packages and define commands in setup.tex
+\input{setup}
+
+\begin{document}
+
+\pagestyle{empty} % no header and no page number
+% disable hyper links to remove warning "destination with same identifier"
+% this means within this section nothing can be referenced with a hyperlink
+\hypersetup{pageanchor=false}
+
+\input{title}
+
+\tableofcontents
+
+\end{document}

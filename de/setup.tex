@@ -1,0 +1,77 @@
+\usepackage[T1]{fontenc}  % 8-bit fonts, improves handling of hyphenations
+\usepackage[utf8x]{inputenc}
+
+\usepackage[labelfont=bf, labelsep=colon, format=hang, textfont=singlespacing]{caption}
+\usepackage{chngcntr}  % continuous numbering of figures/tables over chapters
+\counterwithout{equation}{chapter}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+
+% Uncomment the following line if you switch from scrbook to book
+% and comment the setkomafont line
+%\usepackage{titlesec}  % remove "Chapter" from the chapter title
+%\titleformat{\chapter}[hang]{\bfseries\huge}{\thechapter}{2pc}{\huge}
+\setkomafont{chapter}{\normalfont\bfseries\huge}
+
+\usepackage{setspace}  % Line spacing
+\onehalfspacing
+% \doublespacing  % uncomment for double spacing, e.g. for annotations in correction
+
+% ------------------- functional, default-------------------
+\usepackage[dvipsnames]{xcolor}  % more colors
+\usepackage{array}  % custom format per column in table - needed on the title page
+\usepackage{graphicx}  % include graphics
+\usepackage{subfig}  % divide figure, e.g. 1(a), 1(b)...
+\usepackage{amsmath}  % |
+\usepackage{amsthm}   % | math, bmatrix etc
+\usepackage{amsfonts} % |
+\usepackage[unicode=true,bookmarks=true,bookmarksnumbered=true,
+            bookmarksopen=true,bookmarksopenlevel=1,breaklinks=false]{hyperref}
+
+\usepackage{bm}  % bold greek variables (boldmath)
+\usepackage{tikz}
+\usetikzlibrary{positioning}  % use: above left of, etc
+
+% Improves general appearance of the text
+\usepackage[protrusion=true,expansion=true, kerning]{microtype}
+\usepackage{enumitem}
+% nicer font for pdf rendering
+\usepackage{lmodern}
+
+% For nicer looking tables
+\usepackage{booktabs}
+
+\usepackage{cclicenses}
+
+%------------------------------------------------------------------------------
+%       (re)new commands / settings
+%------------------------------------------------------------------------------
+
+% ------------------- colors -------------------
+\definecolor{darkgreen}{rgb}{0.0, 0.5, 0.0}
+% Colors of the Albert Ludwigs University as in
+% https://www.zuv.uni-freiburg.de/service/cd/cd-manual/farbwelt
+\definecolor{UniBlue}{RGB}{0, 74, 153}
+\definecolor{UniRed}{RGB}{193, 0, 42}
+\definecolor{UniGrey}{RGB}{154, 155, 156}
+
+
+% ------------------- layout -------------------
+% prevents floating objects from being placed ahead of their section
+\let\mySection\section\renewcommand{\section}{\suppressfloats[t]\mySection}
+\let\mySubSection\subsection\renewcommand{\subsection}{\suppressfloats[t]\mySubSection}
+
+
+%==========================================
+% You might not need the following commands, I only included them as they
+% are needed for the example floats
+
+% ------------------- Tikz styles -------------------
+\tikzset{>=latex}  % arrow style
+
+% line spacing should be 1.5
+\renewcommand{\baselinestretch}{1.2}
+
+% use ra in your tables to increase the space between rows
+% 1.3 should be fine
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
